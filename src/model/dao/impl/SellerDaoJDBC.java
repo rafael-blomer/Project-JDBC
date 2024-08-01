@@ -82,7 +82,9 @@ public class SellerDaoJDBC implements SellerDao {
 		PreparedStatement ps = null;
 		try {
 			ps = con.prepareStatement("DELETE FROM seller WHERE Id = ? ");
+			
 			ps.setInt(1, id);
+			
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
